@@ -1,0 +1,23 @@
+LDR X1, [X0, 0]
+LDR X2, [X0, 1]
+LDR X3, [X0, 2]
+ADD X3, X1, X2
+SUB X3, X3, X2
+STR X3, [X0, 3]
+CBNZ X3, -2
+BL 4
+SUB X4, X4, X2
+CBNZ X4, -1
+CBZ X4, 4
+ADD X4, X1, X2
+ADD X4, X4, X4
+RET
+STR X4, [X0, 4]
+
+
+
+
+.data:
+0040
+0010
+0024
